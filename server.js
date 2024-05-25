@@ -88,7 +88,14 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Allow requests from specific origin (your frontend application)
+const corsOptions = {
+  origin: "https://keepa-application.vercel.app",
+  methods: ["GET", "POST"], // Add methods as needed
+  allowedHeaders: ["Content-Type"],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
