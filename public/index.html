@@ -1,0 +1,50 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel File Processor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Upload an Excel File</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept=".xlsx" required>
+    <button type="submit">Upload</button>
+  </form>
+  <h2>Product Details</h2>
+  <table id="productTable" class="display">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel File Processor</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="../node_modules/tabulator-tables/dist/css/tabulator.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.3.4/css/tabulator.min.css">
+</head>
+<body>
+  <h1>Upload an Excel File</h1>
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept=".xlsx" required>
+    <button type="submit">Upload</button>
+  </form>
+  <h2>Product Details</h2>
+  <button id="downloadButton">Download Filtered Data</button>
+  <div id="productTable"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.3.4/js/tabulator.min.js"></script>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
+
