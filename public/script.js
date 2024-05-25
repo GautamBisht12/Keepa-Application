@@ -8,9 +8,10 @@ document
 
     try {
       const response = await fetch("/api/upload", {
-        method: "POST",
+        method: "GET",
         body: formData,
       });
+      console.log(response);
 
       // Check if the response is ok
       if (!response.ok) {
