@@ -9,11 +9,11 @@
   "routes": [
     {
       "src": "/upload",
-      "dest": "/server.js"
+      "dest": "/api/upload"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/"
     }
   ]
 }
