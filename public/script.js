@@ -8,7 +8,7 @@ document
 
     try {
       const response = await fetch("/api/upload", {
-        method: "GET",
+        method: "POST",
         body: formData,
       });
       console.log(response);
