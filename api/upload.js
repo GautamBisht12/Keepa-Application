@@ -52,6 +52,39 @@
 
 // export default router;
 
+// import multer from "multer";
+// import xlsx from "xlsx";
+// import express from "express";
+
+// const router = express.Router();
+
+// const storage = multer.memoryStorage(); // Store files in memory
+
+// const upload = multer({ storage: storage });
+
+// router.post("/upload", upload.single("file"), (req, res) => {
+//   try {
+//     if (!req.file) {
+//       throw new Error("File upload failed");
+//     }
+
+//     // Read the file buffer directly from memory
+//     const buffer = req.file.buffer;
+//     const workbook = xlsx.read(buffer, { type: "buffer" });
+//     const sheetName = workbook.SheetNames[0];
+//     const sheet = workbook.Sheets[sheetName];
+//     const jsonData = xlsx.utils.sheet_to_json(sheet);
+
+//     console.log(jsonData);
+//     res.json(jsonData);
+//   } catch (error) {
+//     console.error("Error processing file:", error);
+//     res.status(500).json({ error: "Error processing file" });
+//   }
+// });
+
+// export default router;
+
 import multer from "multer";
 import xlsx from "xlsx";
 import express from "express";
