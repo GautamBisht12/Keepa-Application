@@ -4,17 +4,27 @@ import xlsx from "xlsx";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import cors from "cors";
+import fs from "fs";
 
 const app = express();
 // const upload = configureFileUpload(path.join(__dirname, 'uploads'));
 
 const PORT = 3000;
 
+app.use(cors());
+
 app.use(express.json());
 
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Ensure the uploads directory exists
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 // Set up storage for Multer
 const storage = multer.diskStorage({
