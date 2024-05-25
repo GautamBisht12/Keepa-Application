@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/upload",
-      "dest": "/api/upload"
+      "src": "/api/upload",
+      "dest": "/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/public/$1"
     }
   ]
 }
