@@ -7,10 +7,13 @@ document
     formData.append("file", fileInput.files[0]);
 
     try {
-      const response = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://keepa-application-lbi43a2aq-gautam-bishts-projects.vercel.app/api/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       console.log(response);
 
       // Check if the response is ok
