@@ -96,7 +96,12 @@ const PORT = process.env.PORT || 3000;
 //   allowedHeaders: ["Content-Type"],
 // };
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://excelsheet-application.vercel.app", // Allow this origin
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
