@@ -100,9 +100,22 @@ const corsOptions = {
   origin: "https://excelsheet-application.vercel.app", // Allow this origin
   optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+app.use((req, res, next) => {
+  console.log("CORS headers added");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://excelsheet-application.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+// Handle preflight requests
+app.options("*", cors(corsOptions));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
